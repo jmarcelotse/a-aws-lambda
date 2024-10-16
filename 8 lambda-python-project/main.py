@@ -7,5 +7,5 @@ def lambda_handler(event, context):
     return {
         'statusCode': 200,
         'body': f"A variável de ambiente é: {my_env_var}",
-        'other_output': "Função Lambda executada com sucesso!"
+        'other_output': "Função Lambda executada com sucesso!!"
     }
