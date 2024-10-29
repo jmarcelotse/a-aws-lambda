@@ -1,0 +1,45 @@
+swagger: "2.0"
+info:
+  version: "v1.0"
+  title: "ColecaoDeFotos"
+schemes:
+- "https"
+paths:
+  /bucket/{item}:
+    post:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        required: true
+        type: "string"
+      - name: "item"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        credentials: "arn:aws:iam::851725502832:role/colecaodefotos-APIgateway-S3"
+        uri: "arn:aws:apigateway:us-east-1:s3:path/colecaodefotos-ntx/{item}"
+        responses:
+          default:
+            statusCode: "200"
+            responseTemplates:
+              application/json: "{\"mensagem\":\"Envio com sucesso\"}"
+        requestParameters:
+          integration.request.path.item: "method.request.path.item"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "PUT"
+        contentHandling: "CONVERT_TO_BINARY"
+        type: "aws"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"
+x-amazon-apigateway-binary-media-types:
+- "image/jpeg"
