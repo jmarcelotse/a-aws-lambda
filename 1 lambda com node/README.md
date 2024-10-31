@@ -32,7 +32,7 @@ No arquivo main.tf, você irá definir a função Lambda. Aqui está um exemplo 
 hcl
 ```
 provider "aws" {
-  region = "us-east-1" # Altere para a região desejada
+  region = "us-east-2" # Altere para a região desejada
 }
 
 resource "aws_lambda_function" "my_lambda" {

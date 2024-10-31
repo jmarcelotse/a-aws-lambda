@@ -1,6 +1,6 @@
-resource "aws_iam_policy" "s3_access_policy" {
+resource "aws_iam_policy" "s3_access" {
   name        = var.policy_name
-  description = "Política de acesso ao bucket colecaodefotos"
+  description = "Política que permite acesso ao bucket S3"
 
   policy = jsonencode({
     Version = "2012-10-17"

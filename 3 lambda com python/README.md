@@ -39,7 +39,7 @@ Agora, você precisa definir a função Lambda e as permissões necessárias no 
 hcl
 ```
 provider "aws" {
-  region = "us-east-1" # Altere para a sua região
+  region = "us-east-2" # Altere para a sua região
 }
 
 resource "aws_iam_role" "lambda_exec" {

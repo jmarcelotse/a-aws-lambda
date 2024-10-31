@@ -74,7 +74,7 @@ No arquivo `main.tf`, você irá definir a função Lambda. Aqui está um exempl
 hcl
 ```
 provider "aws" {
-  region = "us-east-1" # Altere para a sua região desejada
+  region = "us-east-2" # Altere para a sua região desejada
 }
 
 resource "aws_iam_role" "lambda_exec" {

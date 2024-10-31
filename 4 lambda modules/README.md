@@ -302,7 +302,7 @@ Agora, no seu arquivo `main.tf` na raiz do projeto, você pode chamar esses mód
 hcl
 ```
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 
 # Função Lambda Python
